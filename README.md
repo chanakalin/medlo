@@ -1,5 +1,4 @@
 # Medlo
-<<<<<<< HEAD
 
 ![Medlo in brief](https://raw.githubusercontent.com/chanakalin/medlo/master/images/medlo-in-brief.png)
 
@@ -29,7 +28,3 @@ Two sample projects has been added for reference
 
 [ESP32]: <https://www.espressif.com/en/products/hardware/esp32/overview>
 [WSO2 IoT Server]: <https://wso2.com/iot>
-=======
-An IoT based solution for maintaing saturated environmental conditions
-![Medlo in brief](https://raw.githubusercontent.com/chanakalin/medlo/master/images/medlo-in-brief.png)
->>>>>>> 9c2471fa399479e6960e2c047181272a3b117cb0
