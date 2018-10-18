@@ -1,0 +1,68 @@
+<div class="row justify-content-md-center" ng-init="loadData()">
+	<div class="text-center col-sm-12 col-lg-12">
+		<h2>
+			<u>Editing shipment - {{shipmentName}}</u>
+		</h2>
+		<br />
+	</div>
+</div>
+
+
+
+<div>
+	<div class="row">
+		<div class="col col-sm-3">
+			<button class="btn btn-sm col-sm-12 btn-info btn-block"
+				ng-click="addNewItem()">
+				<img src="libs/octicons-6.0.1/lib/svg/diff-added.svg"> Add
+				item
+			</button>
+		</div>
+		<div class="col col-sm-4">
+			<div class="dropdown">
+				<button class="btn btn-secondary dropdown-toggle form-control"
+					type="button" id="dropdownWH" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="true">{{warehouseName}}</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownWH">
+					<li ng-repeat="wh in warehouses"
+						ng-click="selectWarehouse(wh.warehouse,wh.whid,wh.medlonode)"><a
+						class="dropdown-item">{{wh.warehouse}}</a></li>
+				</div>
+			</div>
+		</div>
+		<div class="col col-sm-4">
+			<button class="btn btn-sm col-sm-6 btn-success btn-block"
+				ng-click="updateShipment()">
+				<img src="libs/octicons-6.0.1/lib/svg/checklist.svg"> Update
+				shipment
+			</button>
+		</div>
+	</div>
+	<br />
+	<!-- Grid -->
+	<table class="table table-striped">
+		<thead class="thead-dark">
+			<tr>
+				<th>#</th>
+				<th>Item</th>
+				<th>Temperature (Max &#8451;)</th>
+				<th>Temperature (Min &#8451;)</th>
+				<th>Humidity (Max %)</th>
+				<th>Humidity (Min %)</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in shipmentItems">
+				<td>{{$index + 1}}</td>
+				<td><input class="input" type="text" ng-model="item.itemname"></td>
+				<td><input class="input" type="text" ng-model="item.tempmax"></td>
+				<td><input class="input" type="text" ng-model="item.tempmin"></td>
+				<td><input class="input" type="text" ng-model="item.humidmax"></td>
+				<td><input class="input" type="text" ng-model="item.humidmin"></td>
+				<td><button class="btn btn-sm btn-danger btn-block"
+						ng-click="removeItem($index)">Remove</button></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

@@ -1,0 +1,10 @@
+{
+  "deviceType": {
+    "label": "medlonode",
+    "category": "iot",
+    "downloadAgentUri": "medlonode/device/download",
+    "scopes": [
+      "perm:medlonode:enroll"
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+<div class="row justify-content-md-center" ng-init="loadData()">
+	<div class="text-center col-sm-6 col-lg-3">
+		<u><h3>{{warehouse.warehouse}}</h3></u>
+	</div>
+	<br />
+</div>
+<!-- Form  -->
+<form class="row">
+	<div class="col col-sm-2">
+		<label for="txtFromDate">From : </label> <input type="date"
+			name="txtFromDate" id="txtFromDate" ng-model="fromdate">
+	</div>
+	<div class="col col-sm-2">
+		<label for="txtToDate">To : </label> <input type="date"
+			name="txtToDate" id="txtToDate" ng-model="todate">
+	</div>
+	<div class="col col-sm-2">
+		<button class="btn btn-sm btn-primary" ng-click="reloadCharts()">
+			<img src="libs/octicons-6.0.1/lib/svg/sync.svg"> Reload
+		</button>
+	</div>
+</form>
+<!-- Form end -->
+<br />
+<br />
+<!-- Charts -->
+<div class="row">
+	<div class="col col-sm-10">
+		<div style="min-width: 310px; height: 400px; margin: 0 auto" id="chartTemperature" name="chartTemperature"></div>
+	</div>
+</div>
+<br /><br />
+<div class="row">
+	<div class="col col-sm-10">
+		<div style="min-width: 310px; height: 400px; margin: 0 auto" id="chartHumidity" name="chartHumidity"></div>
+	</div>
+</div>
+<br /><br />
+<div class="row">
+	<div class="col col-sm-10">
+		<div style="min-width: 310px; height: 400px; margin: 0 auto" id="chartUVIndex" name="chartUVIndex"></div>
+	</div>
+</div>

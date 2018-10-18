@@ -1,0 +1,34 @@
+<div class="row justify-content-md-center" ng-init="loadMeloNodes()">
+	<div class="text-center col-sm-6 col-lg-3">
+		<form class="form-signin">
+			<h1 class="h3 mb-3 font-weight-normal">Create warehouse</h1>
+			<label for="txtWarehouse" class="sr-only">Warehouse</label> <input
+				id="txtWarehouse" class="form-control" placeholder="Warehouse"
+				ng-model="warehouse" required autofocus>
+			<div class="dropdown">
+				<button class="btn btn-secondary dropdown-toggle form-control"
+					type="button" id="dropdownWHType" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false">{{whtype}}</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownWHType">
+					<li ng-click="selectWHType('Fixed')"><a class="dropdown-item">Fixed</a></li> 
+					<li ng-click="selectWHType('Moving')"><a class="dropdown-item">Moving</a></li>
+				</div>
+			</div>
+			<br/>
+			<div class="dropdown">
+				<button class="btn btn-secondary dropdown-toggle form-control"
+					type="button" id="dropdownMedloNode" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false">Medlo Node - '{{medloNodeName}}'</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMedloNode">
+					<!-- <li ng-click="selectMdeloNode('Fixed','334444')"><a class="dropdown-item">Node 1</a></li> 
+					<li ng-click="selectMdeloNode('Node 1','223344')"><a class="dropdown-item">Node 2</a></li>-->
+					<li ng-repeat="node in medloNodes" ng-click="selectMedloNode(node.name,node.deviceIdentifier)"><a class="dropdown-item">{{node.name}}</a></li>
+				</div>
+			</div>
+			<br />
+			<br />
+			<button class="btn btn-lg btn-primary btn-block"
+				ng-click="createWH()">Create warehouse</button>
+		</form>
+	</div>
+</div>

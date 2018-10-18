@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Medical Distribution System</title>
+<!-- Libs -->
+<script src="libs/jquery-3.3.1.js"></script>
+<script src="libs/popper.js"></script>
+<script src="libs/bootstrap/js/bootstrap.js"></script>
+<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
+<link rel="stylesheet" href="libs/bootstrap/css/bootstrap-grid.css">
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="libs/angularjs/angular.js"></script>
+<script src="libs/angularjs/angular-route.js"></script>
+<script src="libs/angularjs/angular-cookies.js"></script>
+<!-- Angular App -->
+<script type="text/javascript">	var medistroapp = angular.module("medistroApp", ["ngRoute","ngCookies"]);</script>
+<!-- Angular controllers -->
+<script src="js/ng-ctrl/ctrlIndex.js"></script>
+<script src="js/ng-ctrl/ctrlHome.js"></script>
+<script src="js/ng-ctrl/ctrlLogin.js"></script>
+<script src="js/ng-ctrl/ctrlWarehouses.js"></script>
+<script src="js/ng-ctrl/ctrlWarehousesCreate.js"></script>
+<script src="js/ng-ctrl/ctrlWarehousesAnalyze.js"></script>
+<script src="js/ng-ctrl/ctrlShipments.js"></script>
+<script src="js/ng-ctrl/ctrlShipmentsCreate.js"></script>
+<script src="js/ng-ctrl/ctrlShipmentsView.js"></script>
+<script src="js/ng-ctrl/ctrlShipmentsEdit.js"></script>
+
+</head>
+<body ng-app="medistroApp">
+	<!-- Navbar -->
+	<div ng-controller="ctrlIndex" ng-init="checkLogin()">
+		<nav
+			class="navbar navbar-expand-sm navbar-expand-lg  bg-info navbar-dark">
+			<a class="navbar-brand" href="#!/home"> <img
+				src="images/medistro-icon.png" alt="logo" style="width: 71px;">
+				Medical Distribution System
+			</a>
+			<ul class="navbar-nav"  ng-show="$root.loggedUserId > 0">
+				<!-- <li class="nav-item"><a class="nav-link" ng-click="wso2iotGetToken()">Token</a></li> -->
+				<li class="nav-item"><a class="nav-link" href="#!/home">Home</a></li>
+				<li class="nav-item"><a class="nav-link" href="#!/warehouses">Warehouses</a></li>
+				<li class="nav-item"><a class="nav-link" href="#!/shipments">Shipments</a></li>
+			</ul>
+			<ul class="navbar-nav ml-auto col col-3"
+				ng-show="$root.loggedUserId > 0">
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle navbar-toggler-left"
+					href="http://example.com" id="userDropDown" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false"><img
+						src="libs/octicons-6.0.1/lib/svg/person.svg"> Hi,
+						{{$root.loggedUserName}} </a>
+					<div class="dropdown-menu" aria-labelledby="userDropDown">
+						<a class="dropdown-item" href="#" ng-click="logout()">Logout</a>
+					</div></li>
+			</ul>
+		</nav>
+
+	</div>
+	<!-- Navbar end -->
+	<!-- View -->
+	<div class="container-fluid" ng-view></div>
+	<!-- View end -->
+
+	<!-- AngularJS application -->
+	<script>
+	medistroapp.config(function($routeProvider) {
+	    $routeProvider
+	    .when("/home", {
+	        templateUrl : "pages/home.html",
+	        controller : "ctrlHome"
+	    })
+	    .when("/login", {
+	        templateUrl : "pages/login.html",
+		    controller : "ctrlLogin"
+		})
+		.when("/warehouses", {
+	        templateUrl : "pages/warehouses.html",
+		    controller : "ctrlWarehouses"
+		})
+		.when("/warehouses/create", {
+	        templateUrl : "pages/warehouses-create.html",
+		    controller : "ctrlWarehousesCreate"
+		})
+		.when("/warehouses/analyze/:whid", {
+	        templateUrl : "pages/warehouses-analyze.html",
+		    controller : "ctrlWarehousesAnalyze"
+		})
+		.when("/shipments", {
+	        templateUrl : "pages/shipments.html",
+		    controller : "ctrlShipments"
+		})
+		.when("/shipments/create", {
+	        templateUrl : "pages/shipments-create.html",
+		    controller : "ctrlShipmentsCreate"
+		})
+		.when("/shipments/view/:shipid", {
+	        templateUrl : "pages/shipments-view.html",
+		    controller : "ctrlShipmentsView"
+		})
+		.when("/shipments/edit/:shipid", {
+	        templateUrl : "pages/shipments-edit.html",
+		    controller : "ctrlShipmentsEdit"
+		})
+	    .otherwise({
+	  	  redirectTo: '/home' //default location
+	    })
+	});
+	</script>
+</body>
+</html>

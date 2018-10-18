@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AB Data Center</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+	integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	crossorigin="anonymous"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+	integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	crossorigin="anonymous"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.src.js"></script>
+<!-- Angular App -->
+<script type="text/javascript">	var abdcapp = angular.module("abdcApp", []);</script>
+<script src="ctrlIndex.js"></script>
+</head>
+<body class="bg-gradient-info" ng-app="abdcApp">
+	<div ng-controller="ctrlIndex" ng-init="chartInit()">
+		<!-- Navbar -->
+		<div>
+			<nav
+				class="navbar navbar-expand-sm navbar-expand-lg  bg-dark navbar-dark">
+				<a class="navbar-brand" href="#!/home"> <img
+					src="rack-servers_318-47965.png" alt="logo" style="width: 40px;">
+					AB Data center
+				</a>
+					<label class="text-light" >&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					Show data
+					</label>
+					<div class="col col-sm-2">
+						<label class="text-light" for="txtFromDate">From : </label> <input type="date"
+							name="txtFromDate" id="txtFromDate" ng-model="fromdate">
+					</div>
+					<div class="col col-sm-2">
+						<label class="text-light"  for="txtToDate">To : </label> <input type="date"
+							name="txtToDate" id="txtToDate" ng-model="todate">
+					</div>
+					<div class="col col-sm-2">
+						<button class="btn btn-sm btn-primary" ng-click="reloadCharts()">
+							<img src="libs/octicons-6.0.1/lib/svg/sync.svg"> Reload
+						</button>
+					</div>
+			</nav>
+
+		</div>
+		<!-- Navbar end -->
+		<!-- View -->
+		<div class="container">
+			<br />
+			<!-- Form  -->
+
+			<!-- Form end -->
+			<br /> <br />
+			<!-- Charts -->
+			<div class="row">
+				<div class="col col-sm-6">
+					<div style="min-width: 310px; height: 400px; margin: 0 auto"
+						id="chartTemperature" name="chartTemperature"></div>
+				</div>
+
+				<div class="col col-sm-6">
+					<div style="min-width: 310px; height: 400px; margin: 0 auto"
+						id="chartHumidity" name="chartHumidity"></div>
+				</div>
+			</div>
+		</div>
+		<!-- View end -->
+	</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+// ------------------------------------------------------------------
+// Transitive dependencies of this project determined from the
+// maven pom organized by organization.
+// ------------------------------------------------------------------
+
+org.yac.medlo.ui.feature
+
+
+From: 'an unknown organization'
+  - WSO2 Carbon Orbit - H2 Osgi Console Service (http://wso2.org/h2-database-engine) com.h2database.wso2:h2-database-engine:bundle:1.2.140.wso2v3
+
+
+
+
+

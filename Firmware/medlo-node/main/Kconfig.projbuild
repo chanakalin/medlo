@@ -1,0 +1,63 @@
+menu "Medlo node config"
+
+config MEDLO_WIFI_SSID
+    string "WIFI SSID"
+	default "chanaka4g"
+	help
+		Wifi SSID
+
+config MEDLO_WIFI_PASSWORD
+    string "WIFI Password"
+	default "m@dush@n"
+	help
+		Wifi Password
+
+config MEDLO_DEVICE_ID
+    string "Device ID"
+	default 0
+	help
+		Medlo node device ID (WSO2 IoT server)
+
+config MEDLO_DEVICE_OWNER
+    string "Device owner"
+	default admin
+	help
+		Owner of the device (WSO2 IoT server)
+		
+config MEDLO_AUTH_TOKEN
+    string "Auth token"
+	default 0
+	help
+		Auth token for the Medlo node (WSO2 IoT server)
+		
+config MEDLO_REFRESH_TOKEN
+    string "Refresh token"
+	default 0
+	help
+		Refresh token for the Medlo node (WSO2 IoT server)
+		
+config MEDLO_APPLICATION_KEY
+    string "Application key"
+	default 0
+	help
+		Application for the Medlo node (WSO2 IoT server)
+		
+config MEDLO_MQTT_SERVER
+    string "MQTT server"
+	default "mqtt://medlo.trync.org"
+	help
+		MQTT Server address (WSO2 IoT server)
+
+config MEDLO_MQTT_PORT
+    int "MQTT port"
+	default 1886
+	help
+		MQTT Server port (WSO2 IoT server)
+		
+config MEDLO_PUSH_INTERVAL
+    int "Push interval"
+	default 600
+	help
+		Sensor data push interval (in seconds)
+
+endmenu

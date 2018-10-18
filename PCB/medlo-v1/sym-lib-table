@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name MEDLO_COMPONENTS)(type Legacy)(uri /stuff/PROJECTS/Medlo/PCB/medlo/MEDLO_COMPONENTS.lib)(options "")(descr ""))
+)

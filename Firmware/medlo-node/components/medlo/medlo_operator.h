@@ -1,0 +1,9 @@
+void ac_turn_on();
+void ac_turn_off();
+void heater_turn_on();
+void heater_turn_off();
+void dehumidifier_turn_on();
+void dehumidifier_turn_off();
+void humidifier_turn_on();
+void humidifier_turn_off();
+void operator_all_off();

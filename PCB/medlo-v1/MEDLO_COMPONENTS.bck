@@ -1,0 +1,11 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP BQ21040
+D 0.8-A, Single-Input, Single Cell Li-Ion and Li-Pol Battery Charger
+$ENDCMP
+#
+$CMP FS312F-G
+D Single Cell li-ion li-po battery protection ic
+$ENDCMP
+#
+#End Doc Library

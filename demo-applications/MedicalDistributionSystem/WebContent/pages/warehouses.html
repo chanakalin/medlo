@@ -1,0 +1,22 @@
+<br />
+<button class="btn btn-primary" ng-click="redirectToCreate()">Create
+	warehouse</button>
+<br />
+<br />
+
+<div ng-init="loadwh()">
+	<div class="row">
+		<div class="col-sm-2" ng-repeat="wh in warehouses">
+			<div class="card">
+				<img class="card-img-top" ng-show="wh.type=='F'" src="images/warehouse-icon.png" alt="WH Image">
+				<img class="card-img-top" ng-show="wh.type=='M'" src="images/truck-icon.png" alt="Truck Image">
+				<div class="card-body">
+					<h5 class="card-title">{{wh.warehouse}}</h5>
+					<br /> <a href="#!/warehouses/analyze/{{wh.whid}}" class="btn btn-primary">Analyze</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div>

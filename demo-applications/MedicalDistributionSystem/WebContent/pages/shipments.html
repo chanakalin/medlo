@@ -1,0 +1,29 @@
+<br />
+<button class="btn btn-primary" ng-click="redirectToCreate()">Create
+	shipment</button>
+<br />
+<br />
+<div ng-init="loadShipment()">
+	<table class="table table-striped">
+		<thead class="thead-dark">
+			<tr>
+				<th class="col col-sm-1 ">#</th>
+				<th class="col col-sm-9">Shipment name</th>
+				<th class="col col-sm-2"></th>
+			</tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat="shpmnt in shipments">
+			<td>{{$index + 1}}</td>
+			<td>{{shpmnt.shipment}}</td>
+			<td>
+				<a class="btn btn-solid btn-info" href="#!/shipments/view/{{shpmnt.shipid}}">View</a>
+				<a class="btn btn-solid btn-warning" href="#!/shipments/edit/{{shpmnt.shipid}}">Edit</a>
+			</td>
+		</tr>
+		</tbody>
+	</table>
+
+</div>
+
+

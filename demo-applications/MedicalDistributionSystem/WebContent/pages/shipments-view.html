@@ -1,0 +1,49 @@
+<div class="row justify-content-md-center" ng-init="loadData()">
+	<div class="text-center col-sm-12 col-lg-12">
+		<h1>
+			<u>{{shipmentName}}</u>
+		</h1>
+		<br />
+	</div>
+</div>
+<br />
+<br />
+<!-- Charts -->
+<div class="row">
+	<div class="col col-sm-10">
+		<div style="min-width: 310px; height: 400px; margin: 0 auto" id="chartTemperature" name="chartTemperature"></div>
+	</div>
+</div>
+<br /><br />
+<div class="row">
+	<div class="col col-sm-10">
+		<div style="min-width: 310px; height: 400px; margin: 0 auto" id="chartHumidity" name="chartHumidity"></div>
+	</div>
+</div>
+<br /><br />
+<div class="row">
+	<div class="col col-sm-10">
+		<div style="min-width: 310px; height: 400px; margin: 0 auto" id="chartUVIndex" name="chartUVIndex"></div>
+	</div>
+</div>
+<br/>
+<br/>
+<div>
+	<strong><u><h4>Warehouse Transit</h4></u></strong>
+	<table class="table table-striped">
+		<thead class="thead-dark">
+			<tr>
+				<th>#</th>
+				<th>Warehouse</th>
+				<th>Since</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="wh in shipmentWHData">
+				<td>{{$index + 1}}</td>
+				<td>{{wh.warehouse}}</td>
+				<td>{{wh.fromtime}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
